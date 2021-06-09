@@ -3,9 +3,9 @@ node_modules
 .idea
 *.log*
 .nuxt
-@nuxt
+/@nuxt
 .vscode
 .DS_Store
 coverage
 dist
-example
+/example
