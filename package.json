@@ -1,6 +1,6 @@
 {
   "name": "@nuxt/pagevisibility",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Page visibility module for Nuxt.js",
   "repository": "ECJ222/page-visibility-module",
   "license": "MIT",
