@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/ECJ222/page-visibility-module/compare/v0.0.10...v0.0.12) (2021-06-10)
+
 ### [0.0.9](https://github.com/ECJ222/page-visibility-module/compare/v0.0.10...v0.0.9) (2021-06-10)
 
 ### [0.0.9](https://github.com/ECJ222/page-visibility-module/compare/v0.0.10...v0.0.9) (2021-06-10)
