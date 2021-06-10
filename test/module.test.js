@@ -1,18 +1,10 @@
-const { setup, loadConfig, get } = require('@nuxtjs/module-test-utils')
+// module tests
+import Visibility from '../lib/visibility'
 
-describe('module', () => {
-  let nuxt
+describe('Module test', () => {
+  const { isSupported } = Visibility()
 
-  beforeAll(async () => {
-    ({ nuxt } = (await setup(loadConfig(__dirname, '../../example'))))
-  }, 60000)
-
-  afterAll(async () => {
-    await nuxt.close()
-  })
-
-  test('render', async () => {
-    const html = await get('/')
-    expect(html).toContain('Works!')
+  test('Should be equal to true', () => {
+    expect(isSupported).toBe(true)
   })
 })
