@@ -1,61 +1,78 @@
-# @nuxt/page-visibility
+# 🌫️ nuxt-page-visibility
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
-[![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Page visibility module for Nuxt.js
+> A Nuxt.js module to detect page visibility
 
-[📖 **Release Notes**](./CHANGELOG.md)
+## Table of Contents
 
-## Setup
+- [Requirements](#requirements)
+- [Install](#install)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [License](#license)
 
-1. Add `@nuxt/page-visibility` dependency to your project
+## Requirements
+
+- npm
+- NuxtJS
+- NodeJS
+
+## Install
 
 ```bash
-yarn add @nuxt/page-visibility # or npm install @nuxt/page-visibility
+# npm
+$ npm install nuxt-page-visibility
+
+# yarn
+$ yarn add nuxt-page-visibility
 ```
 
-2. Add `@nuxt/page-visibility` to the `modules` section of `nuxt.config.js`
+## Getting Started
+
+Add `'nuxt-page-visibility'` to the `modules` section of your `nuxt.config.js` file.
 
 ```js
 {
-  modules: [
-    // Simple usage
-    '@nuxt/page-visibility',
-
-    // With options
-    ['@nuxt/page-visibility', { /* module options */ }]
-  ]
+  modules: ["nuxt-page-visibility"];
 }
 ```
 
-## Development
+## Usage
 
-1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
+1. Inject the module in your `nuxt.config.js` file. See [Getting Started](#getting-started).
+2. `this.$visibility` is now available in your components. **Note** that `$visibility` returns an `object` with two properties one is `isVisible` which we would use to check if a user is focused on a page or not, While the other `isSupported` is used to check if the browser supports the Page Visibility API.
+
+```js
+{
+  ...
+  watch: {
+    $visibility: {
+      handler (page) {
+        if (page.isVisible) {
+          // do something
+        } else {
+          // do something
+        }
+      },
+      deep: true
+    }
+  }
+  ...
+}
+```
 
 ## License
 
-[MIT License](./LICENSE)
-
-Copyright (c) ECJ222 <enochchejieh@gmail.com>
+This project is licensed under [MIT](./LICENSE)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxt/page-visibility/latest.svg
-[npm-version-href]: https://npmjs.com/package/@nuxt/page-visibility
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxt/page-visibility.svg
-[npm-downloads-href]: https://npmjs.com/package/@nuxt/page-visibility
-
-[github-actions-ci-src]: https://github.com/ECJ222/page-visibility-module/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/ECJ222/page-visibility-module/actions?query=workflow%3Aci
-
-[codecov-src]: https://img.shields.io/codecov/c/github/ECJ222/page-visibility-module.svg
-[codecov-href]: https://codecov.io/gh/ECJ222/page-visibility-module
-
-[license-src]: https://img.shields.io/npm/l/@nuxt/page-visibility.svg
-[license-href]: https://npmjs.com/package/@nuxt/page-visibility
+[npm-version-src]: https://img.shields.io/npm/v/nuxt-page-visibility/latest.svg
+[npm-version-href]: https://npmjs.com/package/nuxt-page-visibility
+[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-page-visibility.svg
+[npm-downloads-href]: https://npmjs.com/package/nuxt-page-visibility
+[license-src]: https://img.shields.io/npm/l/nuxt-page-visibility.svg
+[license-href]: https://npmjs.com/package/nuxt-page-visibility
