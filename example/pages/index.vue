@@ -13,9 +13,12 @@ export default {
   name: 'Index',
   watch: {
     $visibility: {
-      handler (val) {
-        // eslint-disable-next-line
-        console.log(val)
+      handler (page) {
+        if (page.isVisible) {
+          // do something
+        } else {
+          // do something
+        }
       },
       deep: true
     }
